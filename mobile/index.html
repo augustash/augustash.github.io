@@ -1,0 +1,353 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>August Ash | Mobile Standards</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link href='//fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic|Roboto+Condensed:700,300' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+  </head>
+  <body>
+    <div id="masthead-wrap">
+      <div class="row">
+        <div id="masthead" class="large-12 columns">
+          <span class="aai">August Ash</span>
+          <h1>Mobile <span>Standards</span></h1>
+          <div id="version"><span>v1</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="article-wrap">
+
+    <!-- <div class="section-wrap">
+      <div class="section top">
+        <h2>Why We Need Standards</h2>
+        <p>Maecenas iaculis porta velit vel hendrerit. Mauris vitae rutrum urna. Etiam ultricies tristique orci, id faucibus nisi aliquet et. In hac habitasse platea dictumst. Quisque commodo sit amet lectus ut sagittis. Donec eu felis urna. Vivamus vitae sagittis nulla. Integer at consectetur orci, ac placerat neque. Quisque nec fermentum purus. Praesent mauris nisi, cursus at imperdiet in, feugiat et justo. Suspendisse ligula tortor, auctor a dapibus eget, molestie non odio. In vestibulum magna non sem dictum, ut vestibulum nisi dignissim. Cras dapibus condimentum purus, sit amet suscipit magna malesuada et. Aliquam sollicitudin felis in convallis malesuada.</p>
+      </div>
+    </div> --><!-- END section-wrap -->
+
+    <div class="section-wrap">
+      <div class="section top">
+        <h2>Mobile First Approach</h2>
+        <p>Mobile device usage is growing by the day. This means that every site needs to adapt to different screen sizes to offer the best possible experience for the end user. In order to do this we need to think mobile first. By building from the inside out, it allows us to create a linear workflow. As devices get bigger, our styles need to adapt.</p>
+        <div class="asset">
+          <img src="images/mobile-first.png" alt="Mobile First"/>
+          <span class="caption">As the device changes, so do our styles.</span>
+        </div>
+        <p>At AAI, all upcoming projects should have mobile first in mind. Because we should (and will) put so much emphasis on mobile devices at the beginning of projects we need to change how are process is handled.</p>
+      </div>
+    </div><!-- END section-wrap -->
+
+    <div class="section-wrap">
+      <div class="section">
+        <h2>Design &amp; Build Process</h2>
+        <p>After we have our initial meeting(s) with our new client we're ready to start digging into the design and build of the project. In order to get the creativity juices flowing early we engage with the client first with the <a target="_blank" href="http://styletil.es/">style tile</a>. A style tile is a stripped down palette of colors, fonts and imagery that support the end goal of the finished project. What's really great about style tiles is that they're simple enough that one could quickly iterate new styles based on client feedback without having to change a number of full concept work. This approach allows the designer to gain better perspective on the overall look and feel that the client prefers.</p>
+
+        <p>Prototyping follows soon after. Honestly, it is not directly tied to the result of a style tile so it can start once there is time in the schedule. Prototyping has really taken the place of static wireframes. It does a much better job of showing the user flow and allows for actual interaction with the site. Prototypes are also scalable. Clients can test on their phones, tablets and desktop computers. This approach also allows for us to get the site in front of clients quicker. If they have changes, we can make them in the prototype and deliver the feature in the next iteration.</p>
+
+        <p>After the client has agreed upon a style tile version we're ready to implement these elements into a design concept. We typically create a homepage, standard content page and any other feature rich pages. This all depends on the size and complexity of the project. For instance, if we were building a staffing site we might create a (homepage, standard page, staff listing and detail page).</p>
+        <div class="asset icon">
+          <img src="images/design-process.png" alt="Design Process"/>
+        </div>
+        <p>Once the design concepts are approved we can start to implement the look and feel on top of the built prototype. Remember, with the mobile first approach we're building from the inside out. Start with the mobile size devices and build up to the desktop.</p>
+      </div>
+    </div><!-- END section-wrap -->
+
+    <div class="section-wrap">
+      <div class="section">
+        <h2>The Framework</h2>
+        <div class="asset">
+          <img src="images/zurb-foundation.png" alt="Foundation 5"/>
+        </div>
+        <p>In order to get the most out of modern day browsers, we have choosen to build with the <a target="_black" href="http://foundation.zurb.com/">Foundation 5</a> framework for all projects. It gives us tremendous flexibility in responsive prototyping, customization and scalability. The community of developers behind Foundation is continually growing and improving upon the framework. Unlike other popular frameworks, Foundation keeps it's code base clean and lean. They purposely left their styles spares so themers didn't have to strip away or override baked in code. Rather, they built Foundation to be a starting point.</p>
+        <h3>IE8 Needs Some Help</h3>
+        <p>The last of the legacy browsers. Foundation 5 doesn't play nice with IE8, and honestly <a target="_blank" href="http://thebeatofsports.com/wp-content/uploads/2012/11/turrible.jpg">why should it</a>? With that said, we have to remedy this with some JavaScript polyfills. Simply include the following libraries in the footer of the page and IE8 will start displaying content properly.</p>
+<pre><code>
+&lt;!--[if lt IE 9]&gt;
+  &lt;script type="text/javascript" src="//s3.amazonaws.com/nwapi/nwmatcher/nwmatcher-1.2.5-min.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+
+&lt;!--[if lt IE 9]&gt;
+  &lt;script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+
+&lt;!--[if lt IE 9]&gt;
+  &lt;script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+
+&lt;!--[if lt IE 9]&gt;
+  &lt;script type="text/javascript" src="/local/path/rem.min.js"&gt;&lt;/script&gt;
+&lt;![endif]--&gt;
+</code></pre>
+        <span class="caption">Soon <a target="_blank" href="http://www.microsoft.com/en-us/windows/enterprise/end-of-support.aspx">IE8 will be extinct</a>. When that day comes we can stop implementing the above code to each site.</span>
+      </div>
+    </div><!-- END section-wrap -->
+
+    <div class="section-wrap">
+
+      <div class="row">
+        <div class="medium-5 medium-offset-1 columns">
+          <h2>Getting Sassy</h2>
+          <p><a target="_black" href="http://sass-lang.com/">Sass is a preprocessor</a> that allows themers to quickly and effectively create complex css styles. It adds features such as variables, nested selectors, browser prefixes and loops. By taking a lot of the heavy lifting off of the themer, it allows for faster prototypes and overall quicker builds. Because Foundation is built using Sass, this gives us the ability to easily customize the framework without having to override styles.</p>
+        </div>
+        <div class="medium-5 medium-pull-1 columns">
+          <div class="asset">
+            <img src="images/sass.png" alt="Sass"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p>Sass also works great within our mobile first workflow. Here's an example.</p>
+<pre><code>
+// Change the background color as the device gets bigger
+
+.foo {
+  background-color: red;
+
+  @media #{$medium-up} {
+    background-color: blue;
+  }
+
+  @media #{$large-up} {
+    background: green;
+  }
+}
+</code></pre>
+        <p>Because Sass gives us the power to nest selector and media queries, we can easily update styles as devices get bigger. Foundation provides some handy variables as well. Including <code class="snippet">$medium-up</code> only triggers when the device breakpoint exceeds the medium min width. <code class="snippet">$small-only</code> triggers only for devices within the small width range.</p>
+
+        <p>Because there are so many advanced features that Sass offer us, people have started to create libraries to use as a starting framework. Two very popular libraries are Compass and Bourbon.</p>
+
+        <p>Compass is really the original mixin library. It's been around nearly as long as Sass itself. It's a powerful tool and provides a couple of very useful features. First off, it has a ton of mixins to speed up your theming. Over the past few years they have been growing this list as new requests come in. The other feature Compass has to offer is compiling Sass. By creating a local config.rb file and running <code class="snippet">compass watch</code>, Compass takes a lot of the heavy lifting off of your hands.</p>
+
+        <h3><span class="cross"><a target="_blank" href="http://compass-style.org/">Compass Mixin Library</a></span> <span class="sub">(for now)</span></h3>
+        <p>Though Compass is powerful, here at AAI we do plan to move away from it. The biggest reason is that the mixin libraries are getting bloated and a lot of styles aren't needed in our workflow. Also, the compiler is slow in comparison to the lean libsass approach.</p>
+
+        <h3><a target="_blank" href="http://bourbon.io/">Bourbon Mixin Library</a></h3>
+        <p>Bourbon is a lightweight mixin library created by Thoughtbot. Like Compass, they have taken the time to create extremely helpful snippets to help speed up theming. Bourbon also does a better job at depreciating old mixins as browser standards change.</p>
+
+        <h3><a target="_blank" href="http://libsass.org/">libsass Compiler</a></h3>
+        <p>Libsass is a C/C++ port of the Sass engine. The point is to be simple, fast, and easy to integrate. Because it's so fast, we use it to compile our Sass files. <a target="_blank" href="http://foundation.zurb.com/docs/sass.html">Foundation docs</a> has some simple step by step instructions to help install Foundation with libsass.</p>
+      </div>
+    </div><!-- END section-wrap -->
+
+    <div class="section-wrap">
+      <div class="section">
+        <h2>SMACSS Structure</h2>
+        <div class="asset left">
+          <img src="images/jack-head.png" alt="SMACSS"/>
+        </div>
+        <p><em>(Scalable &amp; Modular Architecture for CSS)</em> is more style guide than rigid framework. There is no library within here for you to download or install. SMACSS is a way to examine your design process and as a way to fit those rigid frameworks into a flexible thought process. It is an attempt to document a consistent approach to site development when using CSS (or in our case, Sass).</p>
+        <p>By creating organization through separation, we can create easier to manage stylesheets. Because SMACSS is framework-agnostic, we can utilize this structure in Drupal, Magento, Wordpress or any other custom framework.</p>
+        <p>Our structure consists of three categories:</p>
+
+        <h3 class="folder">libraries</h3>
+        <p>This contains all variables, mixing and placeholders. It can also be used to store vendor styles.</p>
+
+        <h3 class="folder">components</h3>
+        <p>This contains elements within the site. Sidebar blocks, header, footer, callouts, etc.</p>
+
+        <h3 class="folder">sections</h3>
+        <p>This category is for bigger chunks. If you were building an e-commerce site you might have sections like product list, product detail, checkout, etc.</p>
+      </div>
+    </div><!-- END section-wrap -->
+
+    <div class="section-wrap">
+      <div class="section">
+        <h2>CMS Themes</h2>
+        <p>The goal is to use Foundation across all projects. This will help in situations where one developer works on a project initially and then hands it off to another. That developer should then be able to quickly get up to speed knowing that the project was built using Foundation.</p>
+
+        <p>The problem that we have is we aren't a one CMS shop. We built sites in Drupal, Magento, Ruby and occasionally Wordpress. We need themes that are all built on top of Foundation.</p>
+      </div>
+
+      <div class="row">
+        <div class="medium-5 medium-offset-1 columns">
+          <h3><a target="_blank" href="https://github.com/JaceRider/Fett">Fett <span class="sub">Drupal</span></a></h3>
+          <p>Fett is a base theme for Drupal built and heavily integrated with Foundation. All Drupal 7 projects are required to use this theme. The following sub-modules are dependencies for Fett.</p>
+          <ul>
+            <li><a target="_blank" href="https://github.com/JaceRider/Sonar">Sonar</a> <em>Sass compiler</em></li>
+            <li><a target="_blank" href="https://github.com/JaceRider/Fawesome">Fawesome</a> <em>Font icons</em></li>
+            <li><a target="_blank" href="https://drupal.org/project/jquery_update">jQuery Update</a> <em>7.x-2.x-dev</em></li>
+          </ul>
+        </div>
+        <div class="medium-5 medium-pull-1 columns">
+          <div class="asset icon">
+            <img src="images/fett.png" alt="Fett"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-5 medium-push-6 columns">
+          <h3><a target="_blank" href="https://github.com/augustash/yeti">Yeti <span class="sub">Magento CE</span></a></h3>
+          <p>Yeti is a Magento Community theme built on Foundation. It includes overriding templates, styles and menu configuration to better integrate with the framework. It also is setup to use <a target="_blank" href="http://bower.io/">Bower</a> for easy component upgrading. Installation and setup instructions are included in the Github Readme. The following extensions are dependencies for Yeti.</p>
+          <ul>
+            <li><a target="_blank" href="https://github.com/augustash/ash_core">Ash Core</a></li>
+            <li><a target="_blank" href="https://github.com/augustash/ash_jquery">Ash jQuery</a></li>
+            <li><a target="_blank" href="https://github.com/augustash/ash_fontawesome">Ash Font Awesome</a></li>
+            <li>JakeSharp Menu <em>(included in theme)</em></li>
+          </ul>
+          <p class="note">Being this theme is still in "WIP" form, it's not required for all Magento Community projects. The goal is to get this ready as soon as possible so that it can in the near future.</p>
+        </div>
+        <div class="medium-5 medium-pull-6 columns">
+          <div class="asset icon">
+            <img src="images/yeti.png" alt="Yeti"/>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-5 medium-offset-1 columns">
+          <h3><a target="_blank" href="https://github.com/olefredrik/foundationpress">Foundationpress <span class="sub">WP</span></a></h3>
+          <p>Because we don't develop in Wordpress regularly, we can look to the WP community for a starting base theme. Foundationpress is a simple, stripped down theme built on Foundation.</p>
+        </div>
+        <div class="medium-5 medium-pull-1 columns">
+          <div class="asset icon">
+            <img src="images/foundationpress.png" alt="Foundationpress"/>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- END section-wrap -->
+
+    <div class="section-wrap">
+      <div class="section">
+        <h2>Browser Support</h2>
+        <p>To ensure our client's sites are accessibly to their audience, we need to identify which browsers to target. Browser statistics can vary from project to project, but we still need a base set of browsers to check regardless. Based on <a target="_blank" href="http://gs.statcounter.com/#browser-US-monthly-201303-201403">StatCounter.com</a> these are the most popular browsers used in the United States to date.</p>
+      </div>
+
+      <div class="row">
+        <div class="medium-5 medium-offset-1 columns">
+          <h3>Firefox</h3>
+          <p>As an open source project, Firefox's mission is to promote openness, innovation &amp; opportunity on the web. Because of this, it's one of the preferred browsers on the web today. It's heavily used on Mac and Windows, so we need to ensure our sites work on both operating systems.</p>
+        </div>
+        <div class="medium-5 medium-pull-1 columns">
+          <div class="asset icon">
+            <img src="images/firefox.png" alt="Firefox"/>
+            <span class="caption">Firefox usage in US: 14%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-5 medium-push-6 columns">
+          <h3>Google Chrome</h3>
+          <p>Chrome is quickly becoming one of the most popular browsers out there. Similar to Firefox, developers over at Google are pushing the envelope in innovation on the web. Rapid development and releases keep this browser up to date with the latest technology. It's heavily used on Mac and Windows. We need to ensure our sites work on both operating systems.</p>
+        </div>
+        <div class="medium-5 medium-pull-6 columns">
+          <div class="asset icon">
+            <img src="images/chrome.png" alt="Chrome"/>
+            <span class="caption">Chrome usage in US: 32%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-5 medium-offset-1 columns">
+          <h3>Safari <span class="sub">6+</span></h3>
+          <p>Safari is the default browser installed on all Macs. Though it can be installed on Windows, it's most popular among Mac users. Based on W3 Schools statistics, versions 6 and up are most commonly used now a days. These are the versions that we need to support and test in.</p>
+        </div>
+        <div class="medium-5 medium-pull-1 columns">
+          <div class="asset icon">
+            <img src="images/safari.png" alt="Safari"/>
+            <span class="caption">Safari usage in US: 17%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-5 medium-push-6 columns">
+          <h3>Internet Explorer <span class="sub">8+</span></h3>
+          <p>Internet Explorer is the default browser installed on Windows machines. Because of this and the fact that companies often lockdown browser usage to only IE makes this a browser we can't ignore.</p>
+        </div>
+        <div class="medium-5 medium-pull-6 columns">
+          <div class="asset icon">
+            <img src="images/ie.png" alt="Internet Explorer"/>
+            <span class="caption">IE usage in US: 29%</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- END section-wrap -->
+
+    <div class="section-wrap">
+      <div class="section">
+        <h2>Device Support</h2>
+        <p>Along with browser support we need to be sure we test in today's most popular devices. This includes Apple's iOS, Android and in some situations Windows Mobile.</p>
+      </div>
+
+      <div class="row">
+        <div class="medium-5 medium-offset-1 columns">
+          <h3>iOS <span class="sub">5+</span></h3>
+          <p>iOS usages is growing everyday, and we need to ensure that our sites can keep up. With mobile first approach in mind, we need to start testing in iOS early in the development process. Ideally we'd want to test on actual devices, but since that can't be the case for everything we can use Apple's <a target="_blank" href="https://developer.apple.com/devcenter/ios/index.action">Xcode iOS Simulator</a>.</p>
+        </div>
+        <div class="medium-5 medium-pull-1 columns">
+          <div class="asset icon">
+            <img src="images/ios.png" alt="iOS"/>
+            <span class="caption">iOS usage in US: 60%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-5 medium-push-6 columns">
+          <h3>Android <span class="sub">2.3+</span></h3>
+          <p>Android is another very popular OS and is growing rapidly in the US. Just like iOS, we'll want to test Android devices early and often in development. BrowserStack offers a ton of Android versions to test in.</p>
+        </div>
+        <div class="medium-5 medium-pull-6 columns">
+          <div class="asset icon">
+            <img src="images/android.png" alt="Android"/>
+            <span class="caption">Android usage in US: 33%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-5 medium-offset-1 columns">
+          <h3>Windows Mobile <span class="sub">7+</span></h3>
+          <p>The only reason that Windows Mobile is on this list is that we have run into situations in the past where the client uses it as their primary work and personal phone. To test Windows Mobile you can install the "PC only" <a target="_blank" href="http://dev.windowsphone.com/en-us/downloadsdk">SDK emulator</a>.</p>
+        </div>
+        <div class="medium-5 medium-pull-1 columns">
+          <div class="asset icon">
+            <img src="images/win-mobile.png" alt="Windows Mobile"/>
+            <span class="caption">Windows Mobile usage in US: 2%</span>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- END section-wrap -->
+
+    <!-- <div class="section-wrap">
+      <div class="section">
+        <h2>Mobile Checklist</h2>
+        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in porta metus. Donec sodales turpis id velit ornare aliquet. Sed et ultrices odio. Praesent non odio eget enim ullamcorper faucibus at sit amet ligula. Etiam condimentum ipsum a blandit gravida. Mauris at est tortor. Vestibulum a lobortis leo. Proin iaculis, justo sit amet elementum sagittis, mi lacus ullamcorper dui, eu iaculis metus eros at est. Integer tincidunt sed lacus molestie condimentum. Nullam dictum gravida leo in facilisis. Aliquam ut scelerisque est. Donec at magna magna. Sed vel sapien pulvinar, viverra dolor nec, dignissim lacus. Sed vehicula felis nulla, ac consequat nibh sodales vitae.</p>
+      </div>
+    </div> --><!-- END section-wrap -->
+
+    <div class="section-wrap">
+      <div class="section">
+        <h2>Browser Testing</h2>
+        <p>Browser testing is a vital step in producing a site that can be accessible to a wide range of audience. We need to ensure that we test in all of the browsers and devices mentioned above. Here are a couple of tools that can help with this.</p>
+        <div class="asset">
+          <img src="images/browserstack.png" alt="BrowserStack"/>
+        </div>
+        <p><a target="_black" href="http://browserstack.com/">BrowserStack</a> is the most efficient way to test cross-browser. Real virtual machines that you can run and test right in your browser, including localhost. Each browser come pre-loaded with all the development tools you would need. For instance, open up IE 8 and you'll get Firebug Lite, the IE developer tools, and Companion.js.</p>
+        <div class="asset">
+          <img src="images/modern-ie.png" alt="Modern.IE"/>
+        </div>
+        <p><a target="_black" href="http://www.modern.ie/">modern.IE</a> offers a ton of useful resources for testing sites. From browser snapshots, compatibility reports and virtual machine testing. Similar to BrowserStack, modern.ie gives you access to test on an actual copy of IE8. Either in XP or Windows 7. There are several ways to install the virtual machines, but the preferred method is to use <a target="_blank" href="https://www.virtualbox.org/">VirtualBox</a>. After you have this installed you can simply grab the IE.x curl command found on the modern.ie site and run it in your terminal window. This will download all of the box files you'll need. From here you can follow the "Getting started with VMs: Instructions" and you're ready to go!</p>
+      </div>
+    </div><!-- END section-wrap -->
+
+    <p class="footer">Copyright 2014. August Ash</p>
+
+    </div><!-- END article-wrap -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="js/app.min.js"></script>
+  </body>
+</html>
