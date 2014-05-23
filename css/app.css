@@ -1,0 +1,19 @@
+.logo {
+	background: url('../images/logo.png') no-repeat;
+	height: 245px;
+	width: 427px;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 35%;
+	margin: 0 auto;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+@media screen and (max-width: 427px) {
+	.logo {
+		background-size: auto 70%;
+		width: 300px;
+	}
+}
