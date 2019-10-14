@@ -1,0 +1,99 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>August Ash | Drupal 8s</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link href='//fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic|Roboto+Condensed:700,300' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="css/app.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
+  </head>
+  <body>
+    <div id="masthead-wrap">
+      <div class="row">
+        <div id="masthead" class="large-12 columns">
+          <span class="aai">August Ash</span>
+          <h1>Drupal 8<span> Local Setup</span></h1>
+          <div id="version"><span>v1</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="article-wrap">
+
+    <div class="section-wrap">
+      <div class="section top">
+        <h2>August Ash Local Setup</h2>
+        <p>There are 2 primary setups for Drupal 8 sites, composer based and non-composer based. We are moving forward with a
+        composer based setup.</p>
+
+        <h3><strong>Prerequisites</strong></h3>
+          <ul>
+            <li>Locally configured web server (Apache or Nginx)</li>
+            <li>Node</li>
+            <li>NPM</li>
+            <li>Drush</li>
+          </ul>
+      </div>
+    </div><!-- END section-wrap -->
+
+    <div class="section-wrap">
+      <div class="section top">
+        <h2>Initial Site Setup</h2>
+
+          <ul>
+            <li>Pull the site down locally from Pantheon or GitHub.</li>
+            <li>Pull a copy of the database locally</li>
+            <li>Pull a copy of the files</li>
+            <li>Setup your local DNS</li>
+            <li>Generate a `settings.local.php` file within `web/sites/default`</li>
+            <li>Update database connection info.</li>
+            <li>Clear your cache via `drush cr`</li>
+          </ul>
+      </div>
+    </div><!-- END section-wrap -->
+
+    <div class="section-wrap">
+      <div class="section top">
+        <h2>Theme Setup</h2>
+    
+        <ul>
+          <li>Pull the site down locally from Pantheon or GitHub</li>
+          <li>Move into the site directory you just pulled down `cd SITENAME`</li>
+          <li>For a composer based Drupal install you should see a `web` directory in the root of your project.
+            <ul>
+              <li>NOTE: If it is a Pantheon project, we commit the vendor directory and installed modules by default.</li>
+            </ul>
+          </li>
+          <li>For Theme updates, move into the theme directory from the root `cd web/themes/ash/`
+            <ul>
+              <li>**Note**: If there is a `dev` folder, move into the dev folder as well `cd dev` or `cd web/themes/ash/dev`</li>
+              <li>If there is **NO** `dev` directory stay in the root of the theme `web/themes/ash/`</li>
+              <li>Run `npm install` from within that directory.</li>
+            </ul>
+          </li>
+          <li>Run the following comand to compile SASS and watch for changes within the theme - `gulp`
+            <ul>
+              <li>If you run into an error such as "Node Sass does not yet support your current environment"</li>
+              <li>Try and run `npm rebuild node-sass`</li>
+            </ul>
+          </li>
+          <li>To utilize **BrowserSync**, copy `example.config.local.json` as `config.local.json` and update the `proxy` line with
+          your local development URL</li>
+        </ul>
+      </div>
+    </div><!-- END section-wrap -->
+
+
+
+
+    <p class="footer">Copyright 2019. August Ash</p>
+
+    </div><!-- END article-wrap -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script src="js/app.min.js"></script>
+  </body>
+</html>
